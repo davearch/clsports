@@ -4,7 +4,7 @@ from curses import wrapper
 
 class wind():
     def __init__(self):
-        self.string = 'hello world!'
+        self.cmdline = ''
 
     def start(self, stdscr):
         stdscr.clear()

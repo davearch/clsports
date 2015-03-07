@@ -1,0 +1,9 @@
+# sportsCommand
+# 2015
+#
+import urllib2
+import xml.etree.ElementTree as ET
+
+class query():
+    def __init__(self):
+        
