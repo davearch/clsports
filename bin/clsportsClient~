@@ -1,0 +1,26 @@
+#!/usr/bin/python
+__author__ = "David Archuleta"
+__copyright__ = "Copyright (c) 2015 David Archuleta"
+__license__ = "GPL"
+
+import sys, string, os, pickle, re, logging, signal
+import getopt, time, shlex, socket
+from curses import wrapper
+from clsports import clsports, wind
+
+class clsportsClient():
+    def __init__(self):
+        newind = wind()
+        newind.call()
+
+def main(stdscr):
+    stdscr.border()
+    client = clsportsClient()
+    test = client.test
+    stdscr.addstr(1, 0, test)
+    stdscr.refresh()
+    stdscr.getch()
+
+if __name__ == "__main__":
+    client = clsportsClient()
+    
