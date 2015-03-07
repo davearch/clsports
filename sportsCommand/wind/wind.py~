@@ -3,14 +3,14 @@
 from curses import wrapper
 
 class wind():
-    def init(self):
+    def __init__(self):
         self.string = 'hello world!'
 
     def start(self, stdscr):
         stdscr.clear()
-        stdscr.addstring(1, 1, self.string)
+        stdscr.addstr(1, 1, self.string)
         stdscr.refresh()
         stdscr.getkey()
 
-    def call(self, stdscr):
+    def call(self):
         wrapper(self.start)

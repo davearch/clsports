@@ -1,10 +1,10 @@
 setup.py
 bin/clsportsClient
+sportsCommand/__init__.py
+sportsCommand/clsports.py
 sportsCommand.egg-info/PKG-INFO
 sportsCommand.egg-info/SOURCES.txt
 sportsCommand.egg-info/dependency_links.txt
 sportsCommand.egg-info/top_level.txt
-src/__init__.py
-src/clsports.py
-src/wind/__init__.py
-src/wind/wind.py
+sportsCommand/wind/__init__.py
+sportsCommand/wind/wind.py

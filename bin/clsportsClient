@@ -7,7 +7,7 @@ import sys, string, os, pickle, re, logging, signal
 import getopt, time, shlex, socket
 from curses import wrapper
 from sportsCommand import clsports
-from sportsCommand.wind import wind
+from sportsCommand.wind.wind import wind
 
 class clsportsClient():
     def __init__(self):
