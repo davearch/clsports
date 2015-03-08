@@ -8,20 +8,16 @@ import getopt, time, shlex, socket
 from curses import wrapper
 from sportsCommand import clsports
 from sportsCommand.wind.wind import wind
+from sportsCommand.query.query import query
+from sportsCommand.query.sportsCommandDB import sportsCommandDB
+from sportsCommand.nfl.leagueNFL import leagueNFL
+from sportsCommand.nfl.team import team
 
 class clsportsClient():
-    def __init__(self):
-        newind = wind()
+    def __init__(self, league):
+        newind = wind(league)
         newind.call()
 
-def main(stdscr):
-    stdscr.border()
-    client = clsportsClient()
-    test = client.test
-    stdscr.addstr(1, 0, test)
-    stdscr.refresh()
-    stdscr.getch()
-
 if __name__ == "__main__":
-    client = clsportsClient()
-    
+    nfl = leagueNFL()
+    client = clsportsClient(nfl)

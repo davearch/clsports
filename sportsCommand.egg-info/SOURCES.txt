@@ -6,5 +6,12 @@ sportsCommand.egg-info/PKG-INFO
 sportsCommand.egg-info/SOURCES.txt
 sportsCommand.egg-info/dependency_links.txt
 sportsCommand.egg-info/top_level.txt
+sportsCommand/nfl/__init__.py
+sportsCommand/nfl/leagueNFL.py
+sportsCommand/nfl/player.py
+sportsCommand/nfl/team.py
+sportsCommand/query/__init__.py
+sportsCommand/query/query.py
+sportsCommand/query/sportsCommandDB.py
 sportsCommand/wind/__init__.py
 sportsCommand/wind/wind.py
