@@ -14,22 +14,42 @@ def valid(input):
     newin  = wind(league)
     if input == 9:
         newin.gostart()
-    elif input == KEY_UP:
-        print("up")
-    elif input == KEY_DOWN:
-        print("down")
-    elif input == 13:
-        print("Success")
+    elif input == 10:
+	newin.callPlayers()
+    else:
+	print(input)
 
 class wind():
     def __init__(self, pane):
         self.pane = pane
+	self.players = ['Antonio Brown',
+			'Tom Brady',
+			'Marshawn Lynch']
         self.string = 'sportsCommand'
 
+
+    def callPlayers(self):
+	wrapper(self.listPlayers)
+
+    def listPlayers(self, stdscr):
+	stdscr.clear()
+	stdscr.border()
+	stdscr.addstr(1, 20, "select by player")
+	for counter, player in enumerate(self.players, start=2):
+	    stdscr.addstr(counter, 2, player)
+	stdscr.refresh()
+
     def go(self, stdscr):
+	stdscr.clear()
         stdscr.border()
-        for team in self.pane.teams:
-            stdscr.addstr(team + "\n")
+	stdscr.addstr(1, 20, "select by team")
+	for counter, team in enumerate(self.pane.teams, start=2):
+	    left = 2
+	    if counter > 18:
+		left = 40
+		stdscr.addstr(counter - 17, left, team)
+	    else:
+		stdscr.addstr(counter, left, team)
         stdscr.refresh()
 
     def gostart(self):
@@ -38,6 +58,9 @@ class wind():
     def start(self, stdscr):
         stdscr.clear()
         stdscr.border()
+	stdscr.addstr(20, 20, self.string)
+	stdscr.addstr(21, 20, "(Press Tab to view teams)")
+	stdscr.addstr(22, 20, "(Press Enter to view players)")
         box = Textbox(stdscr)
         stdscr.refresh()
         box.edit(valid)
