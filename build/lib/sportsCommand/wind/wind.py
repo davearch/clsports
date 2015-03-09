@@ -38,6 +38,8 @@ class wind():
 	for counter, player in enumerate(self.players, start=2):
 	    stdscr.addstr(counter, 2, player)
 	stdscr.refresh()
+        box = Textbox(stdscr)
+        box.edit(valid)
 
     def go(self, stdscr):
 	stdscr.clear()
@@ -51,6 +53,8 @@ class wind():
 	    else:
 		stdscr.addstr(counter, left, team)
         stdscr.refresh()
+        box = Textbox(stdscr)
+        box.edit(valid)
 
     def gostart(self):
         wrapper(self.go)
